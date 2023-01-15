@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  pgsql:
+    image: postgres:15.1-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      PGPASSWORD: '${DB_PASSWORD}'
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+    volumes:
+      - './database/data:/var/lib/postgresql/data'
+      - './database/scripts/database.sql:/docker-entrypoint-initdb.d/database.sql'
+    networks:
+      - backend
+networks:
+  backend:
+    driver: bridge
