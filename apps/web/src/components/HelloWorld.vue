@@ -1,40 +1,18 @@
 <script setup lang="ts">
-defineProps<{
-	msg: string;
-}>();
+defineProps<{ msg: string }>();
 </script>
 
 <template>
-	<div class="greetings">
-		<h1 class="green">{{ msg }}</h1>
-		<h3>
-			You’ve successfully created a project with
-			<a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-			<a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-		</h3>
+	<div class="flex flex-col items-center">
+		<div class="bg-black p-3 rounded-full self-start -rotate-45">
+			<p class="text-white font-semibold text-lg">Coming Soon!</p>
+		</div>
+		<img alt="Vue logo" class="logo" src="@/assets/owl.png" width="200" height="200" />
+		<div class="bg-primary py-4 px-10 rounded-xl text-center">
+			<h1 class="font-bold text-7xl text-black">{{ msg }}</h1>
+		</div>
+		<p class="text-xl mt-2">A simple web to rembember
+			<span class="bg-black rounded-xl px-2 text-primary font-medium">URLS</span>
+		</p>
 	</div>
 </template>
-
-<style scoped>
-h1 {
-	font-weight: 500;
-	font-size: 2.6rem;
-	top: -10px;
-}
-
-h3 {
-	font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-	text-align: center;
-}
-
-@media (min-width: 1024px) {
-	.greetings h1,
-	.greetings h3 {
-		text-align: left;
-	}
-}
-</style>
