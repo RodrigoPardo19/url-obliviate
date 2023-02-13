@@ -12,10 +12,10 @@ jobs:
       - name: Deploy to vps
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          KEY: ${{ secrets.KEY }}
+          PORT: ${{ secrets.PORT }}
           script: |
             cd ~/docker/url-obliviate
             git pull origin main
