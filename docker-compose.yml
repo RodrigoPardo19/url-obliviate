@@ -1,4 +1,4 @@
-version: '3.9'
+version: "3.9"
 
 services:
   api:
@@ -7,8 +7,8 @@ services:
       dockerfile: ./apps/api/Dockerfile
     restart: always
     ports:
-      - '3000:3000'
-		environment:
+      - "3000:3000"
+    environment:
       - VIRTUAL_HOST=url-obliviate-api.kuruta.dev,www.url-obliviate-api.kuruta.dev
       - LETSENCRYPT_HOST=url-api-obliviate.kuruta.dev,www.url-obliviate-api.kuruta.dev
       - LETSENCRYPT_EMAIL=rodrigo01alexis@gmail.com
@@ -21,8 +21,8 @@ services:
       dockerfile: ./apps/web/Dockerfile
     restart: always
     ports:
-      - '8080:80'
-		environment:
+      - "8080:80"
+    environment:
       - VIRTUAL_HOST=url-obliviate.kuruta.dev,www.url-obliviate.kuruta.dev
       - LETSENCRYPT_HOST=url-obliviate.kuruta.dev,www.url-obliviate.kuruta.dev
       - LETSENCRYPT_EMAIL=rodrigo01alexis@gmail.com
@@ -33,14 +33,14 @@ services:
     image: postgres:15.1-alpine
     restart: always
     ports:
-      - '5432:5432'
+      - "5432:5432"
     environment:
-      PGPASSWORD: '${DB_PASSWORD}'
-      POSTGRES_DB: '${DB_DATABASE}'
-      POSTGRES_USER: '${DB_USERNAME}'
-      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+      PGPASSWORD: "${DB_PASSWORD}"
+      POSTGRES_DB: "${DB_DATABASE}"
+      POSTGRES_USER: "${DB_USERNAME}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD}"
     volumes:
-      - './apps/api/database/data:/var/lib/postgresql/data'
-      - './apps/api/database/scripts/database.sql:/docker-entrypoint-initdb.d/database.sql'
+      - "./apps/api/database/data:/var/lib/postgresql/data"
+      - "./apps/api/database/scripts/database.sql:/docker-entrypoint-initdb.d/database.sql"
     networks:
       - aries
