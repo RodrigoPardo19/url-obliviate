@@ -8,9 +8,9 @@ services:
     restart: always
     ports:
       - '3000:3000'
-		environment:
-     	- VIRTUAL_HOST=url-obliviate-api.rodrigopardo.dev,www.url-obliviate-api.rodrigopardo.dev
-      - LETSENCRYPT_HOST=url-api-obliviate.rodrigopardo.dev,www.url-obliviate-api.rodrigopardo.dev
+    environment:
+      - VIRTUAL_HOST=url-obliviate-api.kuruta.dev,www.url-obliviate-api.kuruta.dev
+      - LETSENCRYPT_HOST=url-api-obliviate.kuruta.dev,www.url-obliviate-api.kuruta.dev
       - LETSENCRYPT_EMAIL=rodrigo01alexis@gmail.com
     networks:
       - aries
@@ -22,9 +22,9 @@ services:
     restart: always
     ports:
       - '8080:80'
-		environment:
-     	- VIRTUAL_HOST=url-obliviate.rodrigopardo.dev,www.url-obliviate.rodrigopardo.dev
-      - LETSENCRYPT_HOST=url-obliviate.rodrigopardo.dev,www.url-obliviate.rodrigopardo.dev
+    environment:
+      - VIRTUAL_HOST=url-obliviate.kuruta.dev,www.url-obliviate.kuruta.dev
+      - LETSENCRYPT_HOST=url-obliviate.kuruta.dev,www.url-obliviate.kuruta.dev
       - LETSENCRYPT_EMAIL=rodrigo01alexis@gmail.com
     networks:
       - aries
